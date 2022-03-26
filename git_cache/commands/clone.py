@@ -46,7 +46,7 @@ def git_clone(git_options):
     if git_options.command_args:
         remote_url = git_options.command_args[0]
 
-    supported_prefixes = ['http://', 'https://', 'ssh://']
+    supported_prefixes = ['http://', 'https://', 'ssh://', 'git@']
     if remote_url and any(remote_url.startswith(prefix) for prefix in supported_prefixes):
         if use_mirror_for_remote_url(remote_url):
             mirror = GitMirror(url=remote_url)

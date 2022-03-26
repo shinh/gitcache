@@ -59,7 +59,7 @@ def git_ls_remote(git_options):
     if repository is None or repository == 'origin':
         mirror_url = get_mirror_url(git_options)
 
-    supported_prefixes = ['http://', 'https://', 'ssh://']
+    supported_prefixes = ['http://', 'https://', 'ssh://', 'git@']
     if repository and any(repository.startswith(prefix) for prefix in supported_prefixes):
         if use_mirror_for_remote_url(repository):
             mirror_url = repository
